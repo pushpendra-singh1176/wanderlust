@@ -5,6 +5,12 @@ import { configDefaults } from 'vitest/config';
 
 export default defineConfig({
   plugins: [react()] as UserConfig['plugins'],
+
+  server: {
+    host: true,          // ⭐ MOST IMPORTANT
+    port: 5173,
+  },
+
   test: {
     environment: 'jsdom',
     globals: true,
@@ -17,7 +23,6 @@ export default defineConfig({
       './src/__tests__/integration-test/home.test.tsx',
       './src/__tests__/App.test.tsx',
     ],
-
     setupFiles: './test-setup.ts',
   },
 
