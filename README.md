@@ -11,6 +11,18 @@
   <h2>🔗 Important Links</h2>
 </div>
 
+## DevOps Enhancements by Pushpendra Singh
+
+This project has been extended with production-ready DevOps practices:
+
+- Docker & Docker Compose
+- Kubernetes Manifests
+- GitHub Actions CI
+- GitOps with ArgoCD
+- Terraform Infrastructure
+- Prometheus & Grafana Monitoring
+- Production Deployment
+
 <table border="1">
   <tr>
       <td><img src="https://github.com/Meetjain1/wanderlust/assets/133582566/5ca6c472-5c73-41b2-a2df-389cc3e14881.png" alt="Discord Logo" width="50"></td>
