@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo:7
+    container_name: wanderlust-mongodb
+
+    ports:
+      - "27017:27017"
+
+  redis:
+    image: redis:7-alpine
+    container_name: wanderlust-redis
+
+    ports:
+      - "6379:6379"
+
+  backend:
+    build: ./backend
+    container_name: wanderlust-backend
+
+    ports:
+      - "8080:8080"
+
+    depends_on:
+      - mongodb
+      - redis
+
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: wanderlust-frontend
+
+    ports:
+      - "5173:5173"
+
+    depends_on:
+      - backend
+
+    restart: always
