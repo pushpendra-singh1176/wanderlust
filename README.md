@@ -132,7 +132,7 @@ We extend our heartfelt gratitude for your invaluable contribution to our projec
 <div>
 Original application developed by Krishna R Acharya.
 
-DevOps implementation, infrastructure automation, Kubernetes deployment, CI/CD pipeline, GitOps, and monitoring enhancements by Pushpendra Singh.
+DevOps implementation, infrastructure automation, Kubernetes deployment, CI/CD pipeline, GitOps, and monitoring enhancements by Dev.pushpendra
 
 </a>
 </div>
