@@ -11,7 +11,7 @@
   <h2>🔗 Important Links</h2>
 </div>
 
-## DevOps Enhancements by Pushpendra Singh
+## DevOps Enhancements by Dev.pushpendra 
 
 This project has been extended with production-ready DevOps practices:
 
