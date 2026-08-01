@@ -53,16 +53,16 @@ jobs:
         run: |
          sed -i '/backend:/,/frontend:/ s/tag: ".*"/tag: "${{ github.run_number }}"/' \
          wanderlust-infrastructure/helm/wanderlust/values.yaml
-      - name: Verify Backend Deployment
+      - name: Verify values.yaml
         run: |
-         cat wanderlust-infrastructure/kubernetes/backend/deployment.yaml 
+         cat wanderlust-infrastructure/helm/wanderlust/values.yaml
       - name: Update Frontend Image Tag
         run: |
          sed -i '/frontend:/,/mongodb:/ s/tag: ".*"/tag: "${{ github.run_number }}"/' \
          wanderlust-infrastructure/helm/wanderlust/values.yaml
-      - name: Verify frontend Deployment
+      - name: Verify values.yaml
         run: |
-         cat wanderlust-infrastructure/kubernetes/frontend/deployment.yaml
+         cat wanderlust-infrastructure/helm/wanderlust/values.yaml
       - name: Commit Changes
         run: |
          cd wanderlust-infrastructure
