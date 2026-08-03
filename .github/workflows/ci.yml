@@ -72,6 +72,13 @@ jobs:
         run: |
          cd wanderlust-infrastructure/helm/wanderlust
          helm template wanderlust . -n wanderlust
+      - name: Helm Package
+        run: |
+         cd wanderlust-infrastructure/helm
+         helm package wanderlust
+      - name: Verify Helm Package
+        run: |
+         ls -lh wanderlust-infrastructure/helm
       
       - name: Commit Changes
         run: |
