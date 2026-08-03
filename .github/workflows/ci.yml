@@ -63,6 +63,16 @@ jobs:
       - name: Verify values.yaml
         run: |
          cat wanderlust-infrastructure/helm/wanderlust/values.yaml
+      - name: Helm lint
+        run: |
+         cd wanderlust-infrastructure/helm/wanderlust
+         helm lint .
+         
+      - name: Helm Template
+        run: |
+         cd wanderlust-infrastructure/helm/wanderlust
+         helm template wanderlust . -n wanderlust
+      
       - name: Commit Changes
         run: |
          cd wanderlust-infrastructure
