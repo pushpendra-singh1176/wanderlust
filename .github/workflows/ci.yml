@@ -53,14 +53,14 @@ jobs:
         run: |
          sed -i '/backend:/,/frontend:/ s/tag: ".*"/tag: "${{ github.run_number }}"/' \
          wanderlust-infrastructure/helm/wanderlust/values.yaml
-      - name: Verify values.yaml
+      - name: Verify Backend Tag
         run: |
          cat wanderlust-infrastructure/helm/wanderlust/values.yaml
       - name: Update Frontend Image Tag
         run: |
          sed -i '/frontend:/,/mongodb:/ s/tag: ".*"/tag: "${{ github.run_number }}"/' \
          wanderlust-infrastructure/helm/wanderlust/values.yaml
-      - name: Verify values.yaml
+      - name: Verify Frontend Tag
         run: |
          cat wanderlust-infrastructure/helm/wanderlust/values.yaml
       - name: Helm lint
