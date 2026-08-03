@@ -78,6 +78,11 @@ jobs:
          cd wanderlust-infrastructure
          git add .
          git commit -m "Update image tags to ${{ github.run_number }} [skip ci]" || echo "No changes to commit"
+      - name: Git Diff
+        run: |
+         cd wanderlust-infrastructure
+         git diff
+         
       - name: Push Changes
         run: |
          cd wanderlust-infrastructure
