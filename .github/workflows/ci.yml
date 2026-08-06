@@ -82,6 +82,15 @@ jobs:
         run: |
          cd wanderlust-infrastructure/helm/wanderlust
          helm template wanderlust . -n wanderlust
+
+      - name: Helm Dry Run
+        run: |
+         helm install wanderlust \
+         wanderlust-infrastructure/helm/wanderlust \
+         --namespace wanderlust \
+         --create-namespace \
+         --dry-run
+         
       - name: Helm Package
         run: |
          cd wanderlust-infrastructure/helm
@@ -101,7 +110,11 @@ jobs:
          helm registry login registry-1.docker.io \
          --username ${{ secrets.DOCKER_USERNAME }} \
          --password-stdin
-         
+
+      - name: Push Helm Chart
+        run: |
+          cd wanderlust-infrastructure/helm
+          helm push *.tgz oci://registry-1.docker.io/xerox2
       - name: Commit Changes
         run: |
          cd wanderlust-infrastructure
