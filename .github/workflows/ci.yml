@@ -89,7 +89,12 @@ jobs:
       - name: Verify Helm Package
         run: |
          ls -lh wanderlust-infrastructure/helm
-      
+      - name: Upload Helm Chart Artifact
+        uses: actions/upload-artifact@v4
+        with:
+         name: helm-chart
+         path: wanderlust-infrastructure/helm/*.tgz   
+         
       - name: Commit Changes
         run: |
          cd wanderlust-infrastructure
