@@ -94,6 +94,13 @@ jobs:
         with:
          name: helm-chart
          path: wanderlust-infrastructure/helm/*.tgz   
+
+      - name: Login to OCI Registry
+        run: |
+         echo "${{ secrets.DOCKER_PASSWORD }}" | \
+         helm registry login registry-1.docker.io \
+         --username ${{ secrets.DOCKER_USERNAME }} \
+         --password-stdin
          
       - name: Commit Changes
         run: |
